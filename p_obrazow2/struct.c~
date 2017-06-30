@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+#include "struct.h"
+
+void struct(){
+
+  typedef struct{
+
+    char *plik_wej;
+    char *plik_wyj;
+    pixel_t** pixel;
+    int grey;
+    int wight;
+    int height;
+    int jasnosc;
+
+  }dane_t;
+
+  dane_t* dane;
+
+  typedef struct{
+
+    int r;
+    int g;
+    int b;
+
+  }pixel;
+}

@@ -1,0 +1,74 @@
+Michał Wieczorek - Sprawozdanie z Xwindow - 23 grudnia 2015r.
+
+Wprowadzenie:
+Uruchamiam serwer X komendą X :1, następnie na drugim terminalu wpisuję xterm -display :1
+Przechodzę do trybu graficznego i do samego okna terminala.
+Uruchamiam zarządce okien komendą twm&, aby ułatwić pracę w późniejszych krokach. 
+
+1. xeyes, xclock (zmiana geometrii, kolorów, uruchamianie w tle, zatrzymywanie, wznawianie)
+	
+	Wpisuję: xclock -geometry 200x200 -bg yellow &
+		Ukazuję się okno zegara o wymiarach 200x200 i żółtym kolorze tła, 
+		znak & na końcu komendy powoduje uruchomienie procesu w tle
+	
+	Wpisuję: xeyes -gemoetry 500x500 -fg red &
+		Tworzy się okno z oczami w kolorze czerwonym, w rozmiarze 500x500, ten pro-
+		ces zostaje również uruchomiony w tle
+
+	Wpisuję: xsetroot -gray
+		Tło pulpitu graficznego jest teraz w kolorze szarym.
+	
+	Wpisuję: jobs (dla wyświetlenia aktywnych procesów)
+		 kill -STOP %2
+		 kill -CONT %2
+		Następuje zatrzymanie aplikacji zegara, a później jej wznowienie
+
+2. zabijanie aplikacji (odpowiednik kill)
+	
+	Wpisuję: xkill
+		Teraz można zamknąć aplikację za pomocą kliknięcia na jej belkę u góry.
+
+3. zdalne uruchamianie
+	
+	Wpisuję: xhost (do sprawdzenia stanu autoryzacji, wyświetla się lista adresów IP)
+		 xhost +192.168.1.xxx alby dodać adres IP do listy
+		 xauth extract - $DISPLAY | ssh (nazwa)@diablo.ict.pwr.wroc.pl 
+			/usr/openwin/bin/xauth merge -
+		Ostatnia komenda xauth ma na celu przekazanie klucza na serwer diablo
+
+4. uruchamianie połączenia ssh w trybie graficzynm
+	
+	W xtermie piszę:
+	ssh -Y nazwa@diablo.ict.pwr.wroc.pl
+
+Bash:
+
+Wszystkie operacje wykonywane są na serwerze diablo w powłoce bash.
+
+1. Alias wyświetlający wiekośći podkatalogów
+
+	alias wielkosc="du -f" (tworzenie nowego aliasu o nazwie wielkosc)
+	wielkosc
+		Zostaje uruchomiona komenda "du -f" która została przypisana aliasowi. 
+		Wyświetlone zostają podkatalogi oraz obok nich ich rozmiar w jednostkach
+		K/M. Oraz na samym dole całkowita ilość zajętego miejsca.
+
+2. Polecenie powłoki usuwające pliki pasujące do wzorca
+ 
+	#!/bin/bash
+
+	 find . -name '*.jpeg' -exec rm {} \;
+
+		Po uruchomieniu wszystkie pliki z rozszerzeniem .jpeg zostają usunięte. 
+
+3. Zmiana rozszerzenia plików .jpeg->.JPEG oraz .png->.PNG
+
+   	  #!/bin/bash
+
+	  for plik in *.JPEG; do mv $plik `basename $plik .JPEG`.jpeg; done
+	  for plik in *.PNG; do mv $plik `basename $plik .PNG`.png; done
+
+		Po uprzednim umieszczeniu w katalogu plików obraz.PGM i obraz.JPEG urucha-
+		miam skrypt: bash podmiana. Piki zostają podmienione odpowiednio na
+		obraz.pgm oraz obraz.jpeg.
+

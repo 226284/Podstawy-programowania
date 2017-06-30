@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for plik in *.JPEG; do mv $plik `basename $plik .JPEG`.jpeg; done
+
+for plik in *.PNG; do mv $plik `basename $plik .PNG`.png; done
+
+

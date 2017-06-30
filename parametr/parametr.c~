@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+   
+  int i,wartosc;    
+  
+  printf("\n");
+  printf("Program wczytuje wartości, a następnie je porównuje\n\n");
+
+  for(i=1;;i++){
+    printf("Podaj %d. wartość parametru:  ",i);
+    scanf("%d",&wartosc);  
+
+    if(wartosc>=(-5)||wartosc<=5)
+      {printf("Aktualna wartość parametru: %d\n",wartosc);}
+    else if(wartosc==99)
+      {return 0;}
+    else
+      {printf("Bledna wartosc parametru!\n");}
+  }
+}

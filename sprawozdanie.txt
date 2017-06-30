@@ -1,0 +1,63 @@
+1.
+ 1.1 Logujemy siê do systemu X-Window
+ 1.2 Na terminalu pierwszym sprawdzamy funkcjê DISPLAY=0.0
+ 1.3 Na terminalu nr 3 uruchamiamy klientów, np.
+    a) xcalc -geometry +20+20 -bg yellow
+    b) xclock -geometry 300x400-200-200 -bg red -fg blue 
+    c) xmag -geometry +120+120 -bg green
+ 1.4 xemacs -geometry +450+450
+ 1.5. wywo³uje liste procesów ps -fu &LOGNAME
+ 1.6 zamykam wszystkie funkcje xkill -all
+
+2
+ 2.1 uruchamiamy terminal funkcj¹ xterm& (aby pracowaæ w trybie multiwindow)
+ 2.2 trzymaj¹ CTR sprawdzamy u¿ytecznoœæ kombinacji klawiszy.
+ 2.3 CTR+LMP zaznaczanie, 2xCTR+LMP zaznacza s³owo, 4xCTR+LPM nic sie nie dzieje
+ 2.4 zamykam xterma przez xkill i klikniecie na dowolne pole xterma
+
+3.
+ 3.1 sprawdzam obecne parametry wygaszacza ekranu przez funkcjê parametr q
+ 3.2 ustawiam czas wygaszacza na 0,00001 [s]
+ 3.3 za pomoc¹ programuy xsetroot ustawiam kolor t³a jako blue
+
+4.
+ 4.1 uruchamiam xterma na terminalu 4 xterm -display :4
+ 4.2 za pomoc¹ CTR+C zamykam(zabijam) xterma z terminala 4.
+
+5.
+ 5.1 zapisujê poprzednio wywo³ane polecenia do pliku .xinitrc
+      a) xcalc -geometry +20+20 -bg yellow&
+      b) xclock -geometry 300x400-200-200 -bg red -fg blue& 
+      c) xmag -geometry +120+120 -bg green&
+      d) xterm -title GLOWNY
+ 5.2 uruchamiam na terminalu 4 serwer X window poleceniem .xinitrc
+
+6.
+ 6.1 Uruchamiam zarz¹dce okien TWM
+ 6.2 Sprawdzam u¿ytecznoœæ przycisków po lewej i prawej stronie belki.
+ 6.3 Otwieram xlock -geometry 300x400+200+200
+ 6.4 Uruchamiam menu TWM, opcja exit koñczy dzia³anie zarz¹dcy
+ 6.5 Próba uruchomienia równlolegle drugiego zarz¹dcy koñczy sie negatywnie
+ 6.6 Dopisuje do .xinitrc ostatni wiersz którym jest wywo³anie TWM&
+ 6.7 Modyfikuje menu operacji TWM za pomoc¹ polecenia f.exec. Po klikniêciu mysz¹ na tle mamy mo¿liwoœæ wyboru 
+     klientów Acroread'a oraz Netscape'a
+ 6.8 ----
+ 6.9 
+
+7.
+ 7.1 Uruchamiam program xwd oraz xwud
+ 7.2 Zapisujê obraz jako .jpeg za pomoc¹ aplikacji funkcji convert
+
+8.
+ 8.1 Uruchamiam:     
+      a) xcalc -geometry +20+20 -bg yellow
+      b) xclock -geometry 300x400-200-200 -bg red -fg blue 
+ 8.2 Sprawdzam stan autoryzacji xhost
+ 8.3 Zezwalam na autoryzacjê IP: 192.168.1.3
+ 8.4 Przekazujê klucz autoryzacji na wybrany komputer (tj diablo) funkcj¹:
+      xauth extract - DISPLAY | ssh diablo.ict.pwr.wroc.pl /usr/openwin/bin/xauth merge -
+ 8.5 ----
+
+9.
+ 9.1 
+     

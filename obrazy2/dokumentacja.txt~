@@ -1,0 +1,24 @@
+int (*p)[N];	/* M x N */
+
+    p=(int(*)[N])malloc(M*N*sizeof(int));
+
+*********************************************************************
+
+int **p;	/* dwuwymiarowa tablica */
+
+    p=(int**)malloc(M,sizeof(int*));
+    
+    for(i=0;i<M;++i){
+	p[i]=(int*)malloc(N*sizeof(int));
+	}
+
+*********************************************************************
+/*struktury*/
+
+typedef struct obraz{
+	int W,H,S;
+	int **jasnosc;
+	}obrazek;	/*średnik!!!*/
+
+struct obraz ob1;
+       obrazek ob2;

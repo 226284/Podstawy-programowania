@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "funkcje.h"
+
+elem *push(elem *lista, unsigned int wsk)
+{
+  elem *nowy;
+  nowy= malloc(sizeof(elem));
+  nowy->liczba=wsk;
+  nowy->next=last;
+  return nowy;
+}
+
+elem *pop(elem *lista, unsigned int *element)
+{
+  elem *wsk=lista;
+  elem *usun=wsk->next;
+  wsk->next=usun->next;
+  free(usun);
+}
+
+void *print(elem *lista)
+{
+  elem *wsk=lista;
+  while(wsk != NULL)
+    {
+      printf("%d", wsk->liczba);
+      wsk= wsk->next;
+    }
+}

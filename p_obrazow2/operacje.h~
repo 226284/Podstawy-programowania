@@ -1,0 +1,17 @@
+#ifndef OPERACJE_H
+#define OPERACJE_H
+
+#define MAX 512            /* Maksymalny rozmiar wczytywanego obrazu */
+#define DL_LINII 1024      /* Dlugosc buforow pomocniczych */
+#define MAX_KOL 255.0f
+#define MIN_KOL 0
+
+void progowanie(dane_t *dane, int PROG);
+
+void korekcja(dane_t *dane, float GAMMA);
+
+void rozmywanie(dane_t *dane);
+
+void histogram(dane_t *dane);
+
+#endif

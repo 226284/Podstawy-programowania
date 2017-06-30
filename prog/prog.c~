@@ -1,0 +1,8 @@
+#include<stdio.h>
+
+int main(){
+   
+  printf("Napis do wyswietlania\n");
+   
+   return 1;
+}
